@@ -1,11 +1,20 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Show from './Components/Show';
+import Create from './Components/Create';
+import Edit from './Components/Edit';
+import { BrowserRouter , Route, Routes} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hola</h1>
-      <button className="btn btn-warning">Demo</button>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Show />} />
+          <Route path='/create' element={<Create />} />
+          <Route path='/edit/:id' element={<Edit />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
